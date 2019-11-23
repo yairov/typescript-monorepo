@@ -1,0 +1,94 @@
+{
+  "name": "@welldone-software/typescript-storybook-jest-monorepo",
+  "version": "1.0.0",
+  "description": "typescript-storybook-jest-monorepo",
+  "repository": "git@bitbucket.org:welldonedevelopers/typescript-monorepo.git",
+  "author": "Vitali Zaidman <vzaidman@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "_eslint": "eslint --ignore-path .gitignore --cache --cache-location=\"./.cache/eslint\"",
+    "eslint": "yarn _eslint \"./**/*.tsx\"",
+    "lint": "yarn eslint",
+    "test": "jest --config jest/jest.config.js",
+    "build": "lerna run build && yarn eslint && yarn test",
+    "start:main": "yarn workspace wd-main run start",
+    "start:flexible": "yarn workspace wd-flexible run start",
+    "storybook": "start-storybook --config-dir storybook --port 6006",
+    "build-storybook": "cross-env NODE_ENV=production build-storybook --quiet --config-dir storybook --output-dir dist/storybook",
+    "pre-commit": "lint-staged",
+    "pre-push": "yarn test"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn pre-commit",
+      "pre-push": "yarn pre-push"
+    }
+  },
+  "lint-staged": {
+    "*.js": "yarn _eslint"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "jestWebpackResolver": {
+    "webpackConfig": "jest/jest.webpack.config.js",
+    "silent": true
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.4",
+    "@babel/plugin-proposal-class-properties": "^7.7.4",
+    "@babel/plugin-proposal-export-default-from": "^7.7.4",
+    "@babel/plugin-proposal-export-namespace-from": "^7.7.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.7.4",
+    "@babel/plugin-proposal-optional-chaining": "^7.7.4",
+    "@babel/plugin-transform-runtime": "^7.7.4",
+    "@babel/preset-env": "^7.7.4",
+    "@babel/preset-react": "^7.7.4",
+    "@babel/preset-typescript": "^7.7.4",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/react-hooks": "^3.2.1",
+    "@types/jest": "^24.0.23",
+    "@welldone-software/jest-console-handler": "^0.1.1",
+    "@welldone-software/webpack-monorepo-resolver": "^0.4.0",
+    "babel-eslint": "^10.0.3",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-transform-imports": "^2.0.0",
+    "browserslist": "^4.7.3",
+    "circular-dependency-plugin": "^5.2.0",
+    "cross-env": "^6.0.3",
+    "css-loader": "^3.2.0",
+    "eslint": "^6.7.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-plugin-babel": "^5.3.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.16.0",
+    "eslint-plugin-react-hooks": "^2.3.0",
+    "file-loader": "^4.3.0",
+    "fs-extra": "^8.1.0",
+    "html-webpack-plugin": "^3.2.0",
+    "husky": "^3.1.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^24.9.0",
+    "jest-webpack-resolver": "^0.3.0",
+    "lerna": "^3.19.0",
+    "lint-staged": "^9.4.3",
+    "live-server": "^1.2.1",
+    "lodash": "^4.17.15",
+    "mini-css-extract-plugin": "^0.8.0",
+    "node-sass": "^4.13.0",
+    "sass-loader": "^8.0.0",
+    "typescript": "^3.7.2",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.9.0"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.7.4",
+    "react": "^16.11.0",
+    "react-dom": "npm:@hot-loader/react-dom@^16.11.0",
+    "react-hot-loader": "^4.12.18"
+  }
+}

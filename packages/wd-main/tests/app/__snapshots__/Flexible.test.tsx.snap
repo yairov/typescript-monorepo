@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Main simple 1`] = `
+<DocumentFragment>
+  <div>
+    <h1>
+      Hey! I'm the "Main" project
+    </h1>
+    <p>
+      I'm using the "Flexible" project which can be ran separately.
+      <br />
+      <br />
+      We both use the "Common" project.
+      <br />
+      <br />
+      Here is the "Flexible" project":
+    </p>
+    <div>
+      hey! I'm a div that's being used in both projects! CommonComponentInMain
+    </div>
+    <div>
+      Calculate using number: 2
+    </div>
+    <div
+      style="border: 1px solid black; padding: 20px;"
+    >
+      <div>
+        <h1>
+          Hey! I'm the "Flexible" project
+        </h1>
+        <p>
+          I can be a dependency of "Main" project or ran independently.
+          <br />
+          <br />
+          We both use the "Common" project.
+        </p>
+        <div>
+          hey! I'm a div that's being used in both projects! CommonComponentInFlexible
+        </div>
+        <div>
+          Calculate using string: str1
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

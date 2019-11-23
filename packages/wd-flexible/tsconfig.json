@@ -1,0 +1,54 @@
+{
+  // compile only when webpack asks to
+  "compileOnSave": false,
+
+  // paths to transpile
+  "include": [
+    "src/**/*",
+    "tests/**/*",
+    "index.tsx"
+  ],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "jsx": "react",
+
+    // modules are resolved using the es static resolution with node strategy
+    "module": "ESNext",
+    "moduleResolution": "node",
+
+    // "any" type can only explicitly be defined
+    "noImplicitAny": true,
+
+    // Allow default imports from modules with no default export.
+    // this does not affect code emit, just typechecking.
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "strictNullChecks": true,
+
+    // used for module resolution
+    "paths": {
+      "*": [
+        "src/*",
+        "../packages/*"
+      ]
+    },
+
+    // typescript compilation won't transpile imports and exports
+    "target": "ESNext",
+
+    // extra typescript libraries
+    "lib": ["esnext", "dom"],
+
+    // allow falling through cases in switch
+    "noFallthroughCasesInSwitch": false,
+
+    // allow defining variables but not using them
+    "noUnusedParameters": false,
+
+    // allow more flexible types files (d.ts files)
+    "skipLibCheck": true,
+
+    // make sure file references are case sensitive
+    "forceConsistentCasingInFileNames": true
+  }
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Superb Project</title>
+    
+    <script type="text/javascript">
+      (function() {
+        var navMatch = (
+          window.navigator &&
+          window.navigator.userAgent.match(/(chrome(?=\/))\/?\s*(\d+)/i)
+        );
+        // add polyfill if browser is not chrome or older chrome (under v70)
+        if (!navMatch || !navMatch[2] || Number(navMatch[2]) < 70) {
+          var polyfillScript = document.createElement('script');
+          polyfillScript.type = 'text/javascript';
+          polyfillScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/core-js/2.6.9/core.min.js';
+          polyfillScript.integrity = 'sha256-+TULExmyD/NYybiq1jR6qIxiCQHqmjb3yGVZyKyIgso=';
+          polyfillScript.crossOrigin = 'anonymous';
+          var s0 = document.getElementsByTagName('script')[0];
+          s0.parentNode.insertBefore(polyfillScript, s0);
+        }
+      })();
+    </script>
+    
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

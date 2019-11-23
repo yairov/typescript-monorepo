@@ -1,0 +1,40 @@
+{
+  "processors": [
+    [
+      "stylelint-processor-styled-components",
+      {
+        "parserPlugins": [
+          "jsx",
+          "objectRestSpread",
+          "classProperties",
+          "exportExtensions",
+          "asyncGenerators",
+          "functionBind",
+          "functionSent",
+          "dynamicImport",
+          "optionalCatchBinding",
+          "optionalChaining",
+          "exportDefaultFrom",
+          "exportNamespaceFrom"
+        ]
+      }
+    ]
+  ],
+  "plugins": ["stylelint-a11y"],
+  "extends": [
+    "stylelint-config-recommended",
+    "stylelint-config-styled-components",
+    "stylelint-a11y/recommended"
+  ],
+  "rules": {
+    "declaration-colon-newline-after": null,
+    "color-no-hex": true,
+    "color-named": "never",
+    "block-no-empty": null,
+    "indentation": [2, {
+      "baseIndentLevel": 1
+    }],
+    "a11y/no-text-align-justify": true,
+    "a11y/no-obsolete-element": true
+  }
+}

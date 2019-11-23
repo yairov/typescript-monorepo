@@ -1,0 +1,25 @@
+#IDE
+.vs
+.idea
+# .vscode
+
+# Build
+.cache
+
+# Test related files
+coverage
+
+# Dependencies
+node_modules
+
+# Logs
+*.log*
+
+# Misc
+.DS_Store
+
+# Storybook
+storybook-static
+
+#dist
+dist

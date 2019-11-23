@@ -1,0 +1,11 @@
+{
+  "name": "wd-common",
+  "version": "1.0.0",
+  "description": "Common package",
+  "private": true,
+  "license": "MIT",
+  "author": "Vitali Zaidman <vzaidman@gmail.com>",
+  "dependencies": {
+
+  }
+}
