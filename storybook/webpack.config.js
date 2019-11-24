@@ -7,17 +7,17 @@ module.exports = ({config}) => {
   // this keeps module names on production to allow sorting stories by package name
   config.optimization.namedModules = true;
 
-  // config.module.rules.push({
-  //   test: /\.stories\.(ts|tsx)$/,
-  //   use: [
-  //     {
-  //       loader: require.resolve('@storybook/source-loader'),
-  //       options: {parser: 'typescript'},
-  //     },
-  //   ],
-  //   include: pathFromRoot(),
-  //   enforce: 'pre',
-  // });
+  config.module.rules.push({
+    test: /\.story\.(ts|tsx)$/,
+    use: [
+      {
+        loader: require.resolve('@storybook/source-loader'),
+        options: {parser: 'typescript'},
+      },
+    ],
+    include: pathFromRoot(),
+    enforce: 'pre',
+  });
 
   config.module.rules.push({
     test: /\.scss$/,
