@@ -6,11 +6,23 @@
   "include": [
     "src/**/*",
     "tests/**/*",
+    "stories/**/*",
     "index.tsx"
   ],
   "compilerOptions": {
     "baseUrl": ".",
     "jsx": "react",
+
+    // used for module resolution
+    "paths": {
+      "*": [
+        "src/*",
+        "../packages/*"
+      ],
+      "storybook/*": [
+        "../../storybook/*"
+      ]
+    },
 
     // modules are resolved using the es static resolution with node strategy
     "module": "ESNext",
@@ -24,14 +36,6 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "strictNullChecks": true,
-
-    // used for module resolution
-    "paths": {
-      "*": [
-        "src/*",
-        "../packages/*"
-      ]
-    },
 
     // typescript compilation won't transpile imports and exports
     "target": "ESNext",

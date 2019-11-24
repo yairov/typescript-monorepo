@@ -4,11 +4,10 @@
 
   // paths to transpile
   "include": [
-    "src/**/*",
-    "tests/**/*",
-    "stories/**/*",
-    "index.tsx"
+    "./**/*",
+    "../packages/**/*"
   ],
+
   "compilerOptions": {
     "baseUrl": ".",
     "jsx": "react",
@@ -16,11 +15,7 @@
     // used for module resolution
     "paths": {
       "*": [
-        "src/*",
         "../packages/*"
-      ],
-      "storybook/*": [
-        "../../storybook/*"
       ]
     },
 
