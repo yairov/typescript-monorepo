@@ -105,6 +105,15 @@
     "array-callback-return": "off",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
-    "no-restricted-modules": ["error", "lodash"]
+    "no-restricted-modules": ["error", "lodash"],
+    "no-restricted-imports": ["error", {
+      "paths": [
+        {
+          "name": "@storybook/react",
+          "importNames": ["storiesOf"],
+          "message": "Please import \"storiesOf\" from \"storybook/utils\" instead."
+        }
+      ]
+    }]
   }
 }
