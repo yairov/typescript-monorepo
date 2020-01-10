@@ -1,4 +1,4 @@
-{
+module.exports = {
   "parser": "babel-eslint",
   "parserOptions": {
     "ecmaVersion": 6,
@@ -8,7 +8,7 @@
     }
   },
   "extends": ["airbnb", "airbnb/hooks", "plugin:jsx-a11y/recommended"],
-  "plugins": ["babel", "react", "react-hooks", "jsx-a11y"],
+  "plugins": ["babel", "react", "react-hooks", "jsx-a11y", "welldone"],
   "env": {
     "browser": true,
     "es6": true,
@@ -19,6 +19,9 @@
     "flushConsoleOutput": true
   },
   "rules": {
+    "welldone/modules-engagement": ["error", {
+      "glob": "/packages/!(wd-common)/**/!(*.stories|*.test).js"
+    }],
     "no-underscore-dangle": "off",
     "arrow-body-style": "off",
     "react/no-unescaped-entities": "off",
@@ -35,7 +38,8 @@
     "implicit-arrow-linebreak": "off",
     "import/prefer-default-export": "off",
     "import/no-extraneous-dependencies": "off",
-    "import/no-unresolved": "off",
+    "import/no-unresolved": "error",
+    "import/extensions": ["error", {tsx: "never", ts: "never"}],
     "indent": ["error", 2, {
       "ignoreComments": true,
       "SwitchCase": 1
@@ -115,5 +119,12 @@
         }
       ]
     }]
+  },
+  "settings": {
+    "import/resolver": {
+      "webpack": {
+        "config": `${__dirname}/webpack.eslint.config.js`
+      }
+    }
   }
 }
